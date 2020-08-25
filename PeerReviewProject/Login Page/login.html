@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Login Page</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="login.css">
+		<script type="text/javascript" src="./login.js"></script>
+	</head>
+
+<body>
+
+	<div class="container-fluid">
+		<h1>Peer Taught
+			<small class="text-muted">Peer Based Tutoring for Students.</small>
+		</h1>
+		<img class="img-fluid" src="https://imgur.com/4zU1Yvw.jpg" style="width:100%" class="rounded-circle" alt="image"  value="Greatness" >
+	</div>
+
+	
+	
+	
+
+
+	<br /><br />
+	<!-- Button to click to show the modal-->
+	<div class="text-center">
+		<a href="#myModal" class="btn btn-info"  data-toggle="modal" onclick="openModal()">Click Here to Login</a>
+	</div>
+
+	<!-- Modal HTML -->
+	<div id="myModal" class="modal fade" >
+		<div class="modal-dialog modal-login">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="avatar">
+						<img src="https://imgur.com/y44K594.png" alt="Avatar">
+					</div>
+					<h4 class="modal-title">Login Page</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<input type="text" class="form-control" name="email" placeholder="CU Email Address"
+							required="required">
+					</div>
+					<div class="form-group">
+						<input id="psw" type="password" class="form-control" name="password" placeholder="Password"
+							required="required">
+					</div>
+					<div class="form-group">
+						<button id="my_submit_button" class="btn btn-primary btn-block login-btn" disabled
+							onClick="onClickFunction()">Login</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br /><br /><br />
+
+	<!-- Ignore the code below. All of this is just for the code description -->
+	<!-- End of -->
+</body>
+
+</html>

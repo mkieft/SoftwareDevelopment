@@ -1,0 +1,97 @@
+//- home.pug
+//include ../partials/header.pug
+//include ../partials/menu.pug
+
+head
+  title Form
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
+// navbar start here
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  // set the hyperlink of navbar-barnd here
+  a.navbar-barnd(href='#')
+    img(src='https://imgur.com/y44K594.png' alt='' width='70')
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item
+        // set the hyperlink of home here
+        a.nav-link(href='../HomePage/home') Home
+      li.nav-item.dropdown
+        // set the hyperlink of dropdow-bar here
+        a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+          | Account
+        .dropdown-menu(aria-labelledby='navbarDropdown')
+          // set the hyperlink of profile here
+          a.dropdown-item(href='../Profile/profile') Profile
+          a.dropdown-item(href='../LoginPage/signup') Login / Sign up
+          .dropdown-divider
+          // set the hyperlink of ask questions here
+          a.dropdown-item(href='../QuestionPage/question') Ask My Questions
+          // set the hyperlink of existing questions here
+          a.dropdown-item(href='../SearchPage/search') Find Questions
+// navbar end here
+.container
+  br
+  h1 Post New Question
+  br
+  form(action="/QuestionPage/question", method="post")
+   form
+    .form-group
+      label(for='Article Title') Question Title
+      input#formGroupExampleInput.form-control(type='text' name='title' placeholder='Title')
+   br
+   .form-group
+    label(for='comment') Details:
+    textarea#comment.form-control(name='details' rows='10')
+   form
+    .row
+      .col
+        p Select Tag:
+   form
+    .row
+      .col
+        label.checkbox-inline
+          input(type='checkbox',name='tag' value='Math')
+          |   Math
+        label.checkbox-inline
+          input(type='checkbox', name='tag' value='Science')
+          |   Science
+        label.checkbox-inline
+          input(type='checkbox', name='tag' value='English')
+          |   English
+        label.checkbox-inline
+          input(type='checkbox', name='tag' value='History')
+          |   History
+        label.checkbox-inline
+          input(type='checkbox', name='tag' value='Engineering')
+          |   Engineering
+        label.checkbox-inline
+          input(type='checkbox', name='tag' value='Business')
+          |   Business
+        label.checkbox-inline
+          input(type='checkbox', name='tag' value='Arts')
+          |   Arts
+        label.checkbox-inline
+          input(type='checkbox', name='tag' value='Other')
+          |   Other
+   br
+   form
+    .row
+      .col
+        label.col-sm-2.col-form-label(for='inputEmail3') Email
+        .col-sm-10
+          input#inputEmail3.form-control(type='email' name='email' placeholder='Email')
+   br
+   br
+   br
+   button.btn.btn-outline-primary(type='button') Submit
+br
+br
+
+//include ../partials/footer.pug
