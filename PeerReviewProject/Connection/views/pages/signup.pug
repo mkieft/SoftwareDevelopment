@@ -1,0 +1,72 @@
+//- home.pug
+//include ../partials/header.pug
+//include ../partials/menu.pug
+
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  title Signup Page
+  link(href='https://fonts.googleapis.com/css?family=Roboto|Varela+Round' rel='stylesheet')
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+  link(rel='stylesheet' type='text/css' href='signup.css')
+  script
+   include ../pages/signup.js
+.container-fluid
+  h1
+    | Peer Taught
+    small.text-muted Peer Based Tutoring for Students.
+  img.img-fluid(src='https://imgur.com/4zU1Yvw.jpg' style='width:100%' alt='image' value='Greatness')
+br
+br
+// Button to click to show the modal
+.text-center
+  a.btn.btn-info(href='#myModal' data-toggle='modal' onclick='openModal()') Click Here to Register
+// Modal HTML
+#myModal.modal.fade
+  .modal-dialog.modal-login
+    .modal-content
+      .modal-header
+        .avatar
+          img(src='https://imgur.com/y44K594.png' alt='Avatar' style="width:500px;height:160px;")
+        h4.modal-title Sign Up page
+        button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+      .modal-body
+       form(action="/signup", method="post")
+        .form-group
+          input.form-control(type='text' name='firstName' placeholder='First Name' required='required')
+        .form-group
+          input.form-control(type='text' name='lastName' placeholder='Last Name' required='required')
+        .form-group
+          input.form-control(type='text' name='email' placeholder='CU Email Address' required='required')
+        .form-group
+          input#psw.form-control(type='password' name='password' placeholder='Password' required='required')
+        .form-group
+          input#cpsw.form-control(type='password' name='confirm password' placeholder='Confirm Password' required='required')
+        .form-group
+          button#my_submit_button.btn.btn-primary.btn-block.login-btn(disabled='' onclick='onClickFunction()') Sign Up
+      .modal-footer
+        #message(style='display:block')
+          h3 Password must contain the following:
+          p#letter.invalid
+            | A 
+            b lowercase
+            |  letter
+          p#capital.invalid
+            | A 
+            b capital (uppercase)
+            |  letter
+          p#number.invalid
+            | A 
+            b number
+          p#length.invalid
+            | Minimum 
+            b 8 characters
+          p#match.invalid Password and Confirm Password Match
+br
+br
+br
+//include ../partials/footer.pug
